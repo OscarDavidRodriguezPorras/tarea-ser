@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Perfil de Desarrollo Humano</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ========== SECCIÓN 1: INICIO ========== -->
+  <section id="seccion-inicio" class="seccion activa">
+    <div class="fondo-animado">
+      <div class="particula" id="p1"></div>
+      <div class="particula" id="p2"></div>
+      <div class="particula" id="p3"></div>
+      <div class="orbe orbe1"></div>
+      <div class="orbe orbe2"></div>
+      <div class="orbe orbe3"></div>
+      <div class="grid-lines"></div>
+      <div class="emojis-flotantes">
+        <span class="emoji-f" style="--x:8%;  --delay:0s;   --dur:7s;  --size:2rem">💻</span>
+        <span class="emoji-f" style="--x:18%; --delay:1.5s; --dur:9s;  --size:1.6rem">⚽</span>
+        <span class="emoji-f" style="--x:28%; --delay:3s;   --dur:8s;  --size:2.2rem">🟢</span>
+        <span class="emoji-f" style="--x:38%; --delay:0.5s; --dur:6s;  --size:1.8rem">🖥️</span>
+        <span class="emoji-f" style="--x:50%; --delay:2s;   --dur:10s; --size:2rem">🏆</span>
+        <span class="emoji-f" style="--x:60%; --delay:4s;   --dur:7s;  --size:1.5rem">⌨️</span>
+        <span class="emoji-f" style="--x:70%; --delay:1s;   --dur:9s;  --size:2rem">🏅</span>
+        <span class="emoji-f" style="--x:80%; --delay:3.5s; --dur:8s;  --size:1.7rem">🧠</span>
+        <span class="emoji-f" style="--x:90%; --delay:0.8s; --dur:6s;  --size:2.2rem">👟</span>
+        <span class="emoji-f" style="--x:13%; --delay:5s;   --dur:11s; --size:1.5rem">🔋</span>
+        <span class="emoji-f" style="--x:45%; --delay:6s;   --dur:8s;  --size:1.8rem">🏋️</span>
+        <span class="emoji-f" style="--x:75%; --delay:2.5s; --dur:9s;  --size:1.6rem">📱</span>
+        <span class="emoji-f" style="--x:55%; --delay:7s;   --dur:7s;  --size:2rem">🌿</span>
+        <span class="emoji-f" style="--x:33%; --delay:4.5s; --dur:10s; --size:1.5rem">🖱️</span>
+        <span class="emoji-f" style="--x:88%; --delay:6.5s; --dur:8s;  --size:1.8rem">🏃</span>
+      </div>
+    </div>
+    <div class="inicio-contenido">
+      <div class="titulo-wrapper">
+        <div class="titulo-linea-top"></div>
+        <h1 class="titulo-principal">Mi Perfil de<br/><span class="titulo-acento">Desarrollo Humano</span></h1>
+        <div class="titulo-linea-bottom"></div>
+      </div>
+      <button class="btn-comenzar" id="btnComenzar">
+        <span class="btn-glow"></span>
+        <span class="btn-texto">⚔ COMENZAR ⚔</span>
+        <span class="btn-border-anim"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 2: GALERÍA DE IMÁGENES (7 imgs) ========== -->
+  <section id="seccion-galeria" class="seccion">
+    <div class="fondo-animado fondo-oscuro">
+      <div class="orbe orbe2"></div>
+      <div class="orbe orbe3"></div>
+    </div>
+    <div class="galeria-contenido">
+      <div class="slider-wrapper">
+<div class="slider-imagen-container">
+  <img src="tablas/imagen1.jpg.png" alt="Imagen 1" class="slider-img activa-img" id="img0"/>
+  <img src="tablas/imagen2.jpg.png" alt="Imagen 2" class="slider-img" id="img1"/>
+  <img src="tablas/imagen3.jpg.png" alt="Imagen 3" class="slider-img" id="img2"/>
+  <img src="tablas/imagen4.jpg.png" alt="Imagen 4" class="slider-img" id="img3"/>
+  <img src="tablas/imagen5.jpg.png" alt="Imagen 5" class="slider-img" id="img4"/>
+  <img src="tablas/imagen6.jpg.png" alt="Imagen 6" class="slider-img" id="img5"/>
+  <img src="tablas/imagen7.jpg.png" alt="Imagen 7" class="slider-img" id="img6"/>
+</div>
+        </div>
+        <div class="slider-indicadores">
+          <span class="indicador activo-ind" data-idx="0"></span>
+          <span class="indicador" data-idx="1"></span>
+          <span class="indicador" data-idx="2"></span>
+          <span class="indicador" data-idx="3"></span>
+          <span class="indicador" data-idx="4"></span>
+          <span class="indicador" data-idx="5"></span>
+          <span class="indicador" data-idx="6"></span>
+        </div>
+        <div class="slider-controles">
+          <button class="btn-slider btn-prev" id="btnPrev">&#8592; Anterior</button>
+          <button class="btn-slider btn-next" id="btnNext">Siguiente &#8594;</button>
+        </div>
+      </div>
+      <div class="nav-inferior">
+        <button class="btn-nav" id="btnVolverInicio">&#8962; Inicio</button>
+        <button class="btn-nav btn-nav-siguiente" id="btnIrTelarana">Siguiente &#9658;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 3: MI TELARAÑA ========== -->
+  <section id="seccion-telarana" class="seccion">
+    <div class="fondo-animado fondo-oscuro">
+      <div class="orbe orbe1"></div>
+      <div class="orbe orbe3"></div>
+    </div>
+    <div class="telarana-contenido">
+      <h2 class="titulo-seccion">Mi Telaraña</h2>
+      <div class="telarana-img-wrapper">
+        <img src="telarana/imagen1.jpg.jpeg" alt="Mi Telaraña" class="telarana-img"/>
+      </div>
+      <div class="nav-inferior">
+        <button class="btn-nav" id="btnVolverGaleria">&#8592; Volver</button>
+        <button class="btn-nav btn-nav-siguiente" id="btnIrPlan">Siguiente &#9658;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECCIÓN 4: PLAN DE DESARROLLO (7 imgs en círculo) ========== -->
+  <section id="seccion-plan" class="seccion">
+    <div class="fondo-animado fondo-oscuro">
+      <div class="orbe orbe1"></div>
+      <div class="orbe orbe2"></div>
+    </div>
+    <div class="plan-contenido">
+      <div class="plan-orbit-wrapper">
+        <div class="plan-titulo-centro">
+          <h2 class="titulo-plan">Plan de<br/>Desarrollo</h2>
+        </div>
+        <div class="plan-imagenes">
+          <div class="plan-img-item" style="--i:0"><img src="avanzes/imagen1.png" alt="Plan 1"/></div>
+          <div class="plan-img-item" style="--i:1"><img src="avanzes/imagen2.png" alt="Plan 2"/></div>
+          <div class="plan-img-item" style="--i:2"><img src="avanzes/imagen3.png" alt="Plan 3"/></div>
+          <div class="plan-img-item" style="--i:3"><img src="avanzes/imagen4.png" alt="Plan 4"/></div>
+          <div class="plan-img-item" style="--i:4"><img src="avanzes/imagen5.png" alt="Plan 5"/></div>
+          <div class="plan-img-item" style="--i:5"><img src="avanzes/imagen6.png" alt="Plan 6"/></div>
+          <div class="plan-img-item" style="--i:6"><img src="avanzes/imagen7.png" alt="Plan 7"/></div>
+        </div>
+      </div>
+      <div class="nav-inferior">
+        <button class="btn-nav" id="btnVolverTelarana">&#8592; Volver</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <div class="overlay-imagen" id="overlayImagen">
+  <span class="overlay-cerrar" id="overlayCerrar">&times;</span>
+  <img src="" alt="Vista ampliada" id="overlayImg"/>
+</div>
+</body>
+</html>
