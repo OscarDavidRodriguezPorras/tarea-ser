@@ -99,7 +99,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .fondo-animado {
   position: sticky;
-  inset: 0;
+  inset: 1;
   z-index: -1;
   background: radial-gradient(ellipse at 20% 30%, #0d1b4e 0%, #050810 60%);
   overflow: hidden;
