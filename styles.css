@@ -535,30 +535,31 @@ html, body {
 }
 
 /* =============================================
-   EMOJIS FLOTANTES — INICIO
+   EMOJIS FLOTANTES — GLOBAL (todas las secciones)
    ============================================= */
 .emojis-flotantes {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 10;
+  overflow: visible;
 }
 
 .emoji-f {
   position: absolute;
   left: var(--x);
-  bottom: -10%;
-  font-size: var(--size);
-  animation: subirEmoji var(--dur) ease-in-out var(--delay) infinite;
+  top: 100%;
+  font-size: var(--size, 2rem);
+  animation: subirEmoji var(--dur, 8s) ease-in-out var(--delay, 0s) infinite;
   opacity: 0;
-  filter: drop-shadow(0 0 6px rgba(0,229,255,0.5));
+  filter: drop-shadow(0 0 8px rgba(0,229,255,0.5));
   user-select: none;
 }
 
 @keyframes subirEmoji {
-  0%   { transform: translateY(0)   rotate(0deg)   scale(0.8); opacity: 0; }
-  10%  { opacity: 0.75; }
-  50%  { transform: translateY(-55vh) rotate(15deg)  scale(1.1); opacity: 0.6; }
-  90%  { opacity: 0.3; }
-  100% { transform: translateY(-110vh) rotate(-10deg) scale(0.9); opacity: 0; }
+  0%   { transform: translateY(0)      rotate(0deg)   scale(0.8); opacity: 0;    }
+  8%   { opacity: 0.75; }
+  45%  { transform: translateY(-50vh)  rotate(12deg)  scale(1.1); opacity: 0.6;  }
+  92%  { opacity: 0.3; }
+  100% { transform: translateY(-108vh) rotate(-8deg)  scale(0.9); opacity: 0;    }
 }
