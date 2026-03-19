@@ -16,44 +16,94 @@
   --fuente-cuerpo: 'Rajdhani', sans-serif;
 }
 
-html, body {
-  width: 100%; height: 100%;
+html {
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
   background: var(--negro);
   color: var(--blanco);
   font-family: var(--fuente-cuerpo);
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
+/* Barra de scroll bonita */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.5);
+  border-left: 1px solid rgba(0,229,255,0.1);
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--dorado), var(--cyan));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--cyan);
+  border: 1px solid rgba(0,229,255,0.3);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--dorado), var(--cyan), var(--dorado));
+  box-shadow: 0 0 15px var(--dorado);
+}
 /* =============================================
    SECCIONES
    ============================================= */
 .seccion {
-  position: fixed;
-  inset: 0;
-  display: flex;
+  display: none;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 80px;
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.7s ease;
-  overflow-y: auto;
-  z-index: 1;
 }
+
 .seccion.activa {
+  display: flex;
   opacity: 1;
-  pointer-events: all;
-  z-index: 2;
+}
+
+/* Barra de scroll bonita */
+.seccion::-webkit-scrollbar {
+  width: 10px;
+}
+.seccion::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(0,229,255,0.1);
+}
+.seccion::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--dorado), var(--cyan));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--cyan), 0 0 20px rgba(0,229,255,0.3);
+  border: 1px solid rgba(0,229,255,0.3);
+}
+.seccion::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--dorado), var(--cyan), var(--dorado));
+  box-shadow: 0 0 15px var(--dorado), 0 0 30px rgba(245,200,66,0.4);
 }
 
 /* =============================================
    FONDO ANIMADO
    ============================================= */
+
 .fondo-animado {
-  position: fixed;
+  position: sticky;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   background: radial-gradient(ellipse at 20% 30%, #0d1b4e 0%, #050810 60%);
   overflow: hidden;
+  pointer-events: none;
 }
 .fondo-oscuro {
   background: radial-gradient(ellipse at 80% 70%, #080f2a 0%, #030508 70%);
@@ -119,6 +169,8 @@ html, body {
   display: flex; flex-direction: column;
   align-items: center; gap: 50px;
   text-align: center; padding: 20px;
+  min-height: calc(100vh - 80px);
+  justify-content: center;
 }
 
 .titulo-wrapper { position: relative; padding: 10px 0; }
@@ -136,7 +188,7 @@ html, body {
 
 .titulo-principal {
   font-family: var(--fuente-titulo);
-  font-size: clamp(2rem, 6vw, 5rem);
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
   font-weight: 900;
   line-height: 1.2;
   color: var(--blanco);
@@ -352,8 +404,8 @@ html, body {
 
 .plan-orbit-wrapper {
   position: relative;
-  width: min(890px, 95vw);
-  height: min(850px, 95vw);
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
   display: grid;
   grid-template-areas:
     ".    t1   t2   ."
@@ -374,7 +426,8 @@ html, body {
   background: radial-gradient(ellipse, rgba(5,8,16,0.97) 60%, transparent 100%);
   padding: 24px 20px;
   border-radius: 50%;
-  width: 200px; height: 200px;
+  width: 160px;
+  height: 160px;
   display: flex; align-items: center; justify-content: center;
   border: 2px solid rgba(245,200,66,0.5);
   box-shadow: 0 0 40px rgba(245,200,66,0.2), inset 0 0 20px rgba(0,0,0,0.8);
@@ -397,8 +450,8 @@ html, body {
 
 .plan-img-item {
   position: absolute;
-  width: 200px;
-  height: 145px;
+  width: 150px;
+  height: 120px;
   border: 2px solid rgba(0,229,255,0.45);
   border-radius: 10px;
   overflow: hidden;
@@ -562,4 +615,47 @@ html, body {
   45%  { transform: translateY(-50vh)  rotate(12deg)  scale(1.1); opacity: 0.6;  }
   92%  { opacity: 0.3; }
   100% { transform: translateY(-108vh) rotate(-8deg)  scale(0.9); opacity: 0;    }
+}
+
+/* =============================================
+   SCROLL PERSONALIZADO
+   ============================================= */
+.seccion {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.seccion.activa {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 2;
+}
+
+/* Barra de scroll bonita */
+.seccion::-webkit-scrollbar {
+  width: 8px;
+}
+.seccion::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+}
+.seccion::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--dorado));
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--cyan);
+}
+.seccion::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--dorado), var(--cyan));
 }
